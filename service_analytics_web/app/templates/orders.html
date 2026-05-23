@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="toolbar">
+  <label class="field">
+    <span>Статус</span>
+    <select id="filter-status">
+      <option value="">Все</option>
+      <option value="new">new</option>
+      <option value="assigned">assigned</option>
+      <option value="in_progress">in_progress</option>
+      <option value="completed">completed</option>
+      <option value="cancelled">cancelled</option>
+    </select>
+  </label>
+  <label class="field field-grow">
+    <span>Поиск</span>
+    <input type="search" id="filter-search" placeholder="Название или описание…" />
+  </label>
+  <button type="button" class="btn btn-ghost" id="btn-refresh">Обновить</button>
+</div>
+
+<div class="action-bar">
+  <label class="field">
+    <span>Инженер</span>
+    <select id="engineer-select"></select>
+  </label>
+  <button type="button" class="btn btn-primary" id="btn-assign">Назначить</button>
+  <button type="button" class="btn btn-secondary" id="btn-complete">Завершить</button>
+</div>
+
+<article class="panel table-panel">
+  <div class="table-wrap">
+    <table class="data-table" id="orders-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Клиент</th>
+          <th>Инженер</th>
+          <th>Заголовок</th>
+          <th>Статус</th>
+          <th>Приоритет</th>
+          <th>Создана</th>
+          <th>Завершена</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</article>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/orders.js" defer></script>
+{% endblock %}

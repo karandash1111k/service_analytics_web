@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="toolbar">
+  <label class="field">
+    <span>Статус</span>
+    <select id="filter-status">
+      <option value="">Все</option>
+      <option value="pending">pending</option>
+      <option value="in_progress">in_progress</option>
+      <option value="successful">successful</option>
+      <option value="failed">failed</option>
+      <option value="cancelled">cancelled</option>
+    </select>
+  </label>
+  <button type="button" class="btn btn-ghost" id="btn-refresh">Обновить</button>
+</div>
+
+<article class="panel table-panel">
+  <div class="table-wrap">
+    <table class="data-table" id="repairs-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Заявка</th>
+          <th>Устройство</th>
+          <th>Модель</th>
+          <th>Статус</th>
+          <th>Стоимость</th>
+          <th>Начало</th>
+          <th>Окончание</th>
+          <th>Результат</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</article>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/repairs.js" defer></script>
+{% endblock %}

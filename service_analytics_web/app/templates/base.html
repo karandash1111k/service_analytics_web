@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page_title }} · Service Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/app.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" defer></script>
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">
+          <span class="brand-title">Service</span>
+          <span class="brand-sub">Analytics</span>
+        </div>
+      </div>
+      <nav class="nav">
+        {% for key, label, icon in nav_items %}
+        <a href="/{{ key }}" class="nav-link{% if active_page == key %} is-active{% endif %}">
+          <span class="nav-icon">{{ icon }}</span>
+          <span>{{ label }}</span>
+        </a>
+        {% endfor %}
+      </nav>
+      <div class="sidebar-footer">
+        <span class="badge-web">Web</span>
+        <span class="muted">Корпоративная аналитика</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Выездной сервис</p>
+          <h1 class="page-title">{{ page_title }}</h1>
+        </div>
+        <div id="global-toast" class="toast hidden" role="status"></div>
+      </header>
+      <div class="page-content">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+  </div>
+  <script src="/static/js/app.js" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="detail-strip" id="analytics-summary">Загрузка…</p>
+
+<div class="chart-grid">
+  <article class="panel chart-panel">
+    <h2 class="panel-title">Статусы ремонтов</h2>
+    <canvas id="chart-outcomes" height="140"></canvas>
+  </article>
+  <article class="panel chart-panel">
+    <h2 class="panel-title">Длительность ремонтов</h2>
+    <canvas id="chart-duration" height="140"></canvas>
+  </article>
+</div>
+
+<article class="panel chart-panel chart-panel--wide">
+  <h2 class="panel-title">Просрочки SLA по приоритету</h2>
+  <canvas id="chart-sla-priority" height="80"></canvas>
+</article>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/analytics.js" defer></script>
+{% endblock %}

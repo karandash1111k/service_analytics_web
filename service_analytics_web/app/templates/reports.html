@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="reports-hero panel">
+  <div class="reports-copy">
+    <h2 class="panel-title">Отчёты для руководства</h2>
+    <p class="muted">
+      Сводные KPI, SLA, загрузка инженеров и графики — в форматах Excel и PDF.
+      Файл скачивается сразу в браузере.
+    </p>
+  </div>
+  <div class="reports-actions">
+    <a href="/api/reports/excel" class="btn btn-primary btn-lg" download>Экспорт Excel</a>
+    <a href="/api/reports/pdf" class="btn btn-secondary btn-lg" download>Экспорт PDF</a>
+  </div>
+</section>
+
+<ul class="feature-list">
+  <li>Листы KPI и SLA с актуальными метриками</li>
+  <li>Распределение заявок и загрузка инженеров</li>
+  <li>PDF с визуализациями для презентаций</li>
+</ul>
+{% endblock %}

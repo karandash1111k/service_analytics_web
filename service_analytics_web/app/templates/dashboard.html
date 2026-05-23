@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="kpi-grid" id="kpi-cards">
+  <article class="kpi-card" data-kpi="sla">
+    <div class="kpi-glow kpi-glow--cyan"></div>
+    <p class="kpi-label">SLA соблюдения</p>
+    <p class="kpi-value" id="kpi-sla">—</p>
+  </article>
+  <article class="kpi-card" data-kpi="hours">
+    <div class="kpi-glow kpi-glow--violet"></div>
+    <p class="kpi-label">Среднее время заявки</p>
+    <p class="kpi-value" id="kpi-hours">—</p>
+    <p class="kpi-unit">часов</p>
+  </article>
+  <article class="kpi-card" data-kpi="forecast">
+    <div class="kpi-glow kpi-glow--amber"></div>
+    <p class="kpi-label">Прогноз заявок</p>
+    <p class="kpi-value" id="kpi-forecast">—</p>
+    <p class="kpi-unit">на завтра</p>
+  </article>
+  <article class="kpi-card" data-kpi="success">
+    <div class="kpi-glow kpi-glow--emerald"></div>
+    <p class="kpi-label">Успешные ремонты</p>
+    <p class="kpi-value" id="kpi-success">—</p>
+  </article>
+</section>
+
+<p class="detail-strip" id="detail-strip">Загрузка…</p>
+
+<div class="chart-grid">
+  <article class="panel chart-panel">
+    <h2 class="panel-title">Заявки по дням</h2>
+    <canvas id="chart-orders" height="120"></canvas>
+  </article>
+  <article class="panel chart-panel">
+    <h2 class="panel-title">Загрузка инженеров</h2>
+    <canvas id="chart-engineers" height="120"></canvas>
+  </article>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/dashboard.js" defer></script>
+{% endblock %}
