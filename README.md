@@ -55,4 +55,4 @@ service_analytics_web/
     static/            # CSS, JS
 ```
 
-Десктоп-приложение по-прежнему запускается из `service_analytics_system` командой `python main.py`.
+Десктоп-приложение по-прежнему запускается из `ervice_analytics_web` командой `python main.py`.
